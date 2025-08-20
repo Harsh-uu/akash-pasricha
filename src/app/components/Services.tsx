@@ -36,7 +36,7 @@ export const Services = () => {
                     whileInView="visible"
                     viewport={{ once: true, amount: 0.3 }}
                     transition={{ delay: index * 0.1 }}
-                    className="bg-gray-50 p-8 rounded-lg text-left hover:shadow-xl transition-shadow"
+                    className="bg-gray-50 p-8 rounded-lg text-left hover:translate-y-2 hover:shadow-xl transition-all duration-300"
                 >
                     <IconWrapper>{service.icon}</IconWrapper>
                     <h3 className="mt-4 text-xl font-bold text-gray-900">{service.title}</h3>

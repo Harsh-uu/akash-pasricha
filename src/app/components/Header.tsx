@@ -4,6 +4,7 @@
 import { motion } from "framer-motion";
 import { Menu } from "lucide-react";
 import Image from "next/image";
+import Link from "next/link";
 
 export const Header = () => {
   return (
@@ -14,6 +15,7 @@ export const Header = () => {
       className="top-0 border-b border-gray-200 sticky z-50 bg-white/80 backdrop-blur-md shadow-sm"
     >
       <div className="container mx-auto flex justify-between items-center p-4 -z-10">
+        <Link href="/">
         <Image
           className="h-16 w-20 md:h-20 md:w-24"
           src="/hubhawks.webp"
@@ -21,6 +23,7 @@ export const Header = () => {
           width={40}
           height={100}
         />
+        </Link>
         <nav className="hidden md:flex items-center gap-6 text-sm font-medium text-gray-600">
           <a href="#services" className="hover:text-rose-600 transition-colors">
             Services
@@ -34,7 +37,7 @@ export const Header = () => {
           <a href="#" className="hover:text-rose-600 transition-colors">
             Blog
           </a>
-          <a href="#" className="hover:text-rose-600 transition-colors">
+          <a href="/about" className="hover:text-rose-600 transition-colors">
             About
           </a>
           <a href="#contact" className="hover:text-rose-600 transition-colors">

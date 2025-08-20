@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import { motion } from "framer-motion";
+import { easeOut } from "framer-motion";
 import { Target, Eye } from 'lucide-react';
 
 // Animation variants for sections
@@ -12,7 +13,7 @@ const sectionVariants = {
     y: 0,
     transition: {
       duration: 0.6,
-      ease: "easeOut",
+      ease: easeOut,
     },
   },
 };
@@ -121,7 +122,7 @@ const Page = () => {
                 <Image
                   src="/Kevin.jpg" // IMPORTANT: Replace with the actual image path
                   alt="Portrait of the Hubhawks CEO"
-                  layout="fill"
+                  fill
                   objectFit="cover"
                   className="rounded-full md:rounded-xl shadow-lg"
                 />
@@ -132,7 +133,7 @@ const Page = () => {
             <div className="md:w-2/3 text-center md:text-left">
               <h3 className="text-2xl font-bold text-gray-900">Kevin Missal</h3>
               <p className="text-rose-600 font-semibold mt-1">CEO & Founder of Hubhawks</p>
-              <p className="mt-4 text-gray-600 leading-relaxed">
+              <p className="mt-4 text-gray-600 leading-relaxed px-4 sm:px-0">
                 Kevin Missal wrote his first book at the age of 14, and at 22, the St. Stephens graduate has turned out to be a bestselling author and a full-time writer with the first two books in his Kalki series being runaway successes. Along with the Narasimha series being published by Harper Collins, his recent release with Penguin reimagines the fabled story of Sinbad the Sailor. Kevin loves fantasy fiction and has always been a fan of mythology. His books have been featured in publications like the Sunday Guardian, The New Indian Express and Millennium Post. He lives in Gurugram.
               </p>
             </div>

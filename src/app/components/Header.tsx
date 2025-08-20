@@ -51,7 +51,7 @@ export const Header = () => {
           Get Free Consultation
         </a>
         <button className="sm:hidden">
-          <Menu />
+          <Menu className="text-black"/>
         </button>
       </div>
     </motion.header>

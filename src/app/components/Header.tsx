@@ -14,7 +14,7 @@ export const Header = () => {
       transition={{ duration: 0.5 }}
       className="top-0 border-b border-gray-200 sticky z-50 bg-white/80 backdrop-blur-md shadow-sm"
     >
-      <div className="container mx-auto flex justify-between items-center p-4 -z-10">
+      <div className="max-w-7xl mx-auto flex justify-between items-center p-4 -z-10">
         <Link href="/">
         <Image
           className="h-16 w-20 md:h-20 md:w-24"

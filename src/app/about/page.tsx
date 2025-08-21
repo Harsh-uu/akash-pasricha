@@ -28,7 +28,7 @@ const Page = () => {
         variants={sectionVariants}
         className="text-center py-20 md:py-32"
       >
-        <div className="container mx-auto px-4">
+        <div className="max-w-7xl mx-auto px-4">
           <h1 className='text-4xl md:text-5xl font-extrabold text-gray-900'>
             About Hubhawks
           </h1>
@@ -46,7 +46,7 @@ const Page = () => {
         variants={sectionVariants}
         className="pb-20 md:pb-32"
       >
-        <div className="container mx-auto px-4">
+        <div className="max-w-7xl mx-auto px-4">
           <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-16">
             {/* Text Content */}
             <div className="lg:w-1/2 text-center lg:text-left">
@@ -81,7 +81,7 @@ const Page = () => {
         variants={sectionVariants}
         className="py-20 md:py-32 bg-gray-50"
       >
-        <div className="container mx-auto px-4 grid grid-cols-1 md:grid-cols-2 gap-12 lg:gap-16">
+        <div className="max-w-7xl mx-auto px-4 grid grid-cols-1 md:grid-cols-2 gap-12 lg:gap-16">
           <div className="text-center">
             <div className="inline-flex bg-rose-100 text-rose-600 rounded-full p-4">
               <Target size={32} />
@@ -111,7 +111,7 @@ const Page = () => {
         variants={sectionVariants}
         className="py-20 md:py-28"
       >
-        <div className="container mx-auto px-4">
+        <div className="max-w-7xl mx-auto px-4">
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 text-center mb-12">
             Meet Our Founder
           </h2>

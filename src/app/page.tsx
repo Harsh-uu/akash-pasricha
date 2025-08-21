@@ -12,16 +12,14 @@ export default function Home() {
   return (
     <div className="bg-white relative text-gray-800 font-sans">
       <Header />
-      <main>
-        <div className="container mx-auto px-4">
-        <Hero />
+      <main className="mx-auto max-w-7xl">
+          <Hero />
           {/* <TrustedBy /> */}
           <Services />
           <HowItWorks />
           <TestimonialCarousel />
           <WhyChooseUs />
           <CTASection />
-        </div>
       </main>
       <Footer />
     </div>

@@ -1,15 +1,17 @@
 // src/components/Footer.tsx
 "use client";
 
+import Image from "next/image";
+
 export const Footer = () => {
   return (
-    <footer className="bg-gray-50 border-t border-gray-200">
+    <footer className="bg-gray-50 border-t border-gray-200 text-center md:text-left">
       <div className="max-w-7xl mx-auto py-8 px-4">
         <div className="grid grid-cols-1 md:grid-cols-12 gap-8">
           {/* Column 1: Brand and Newsletter */}
           <div className="md:col-span-4">
-            <h3 className="text-2xl font-bold text-gray-900">Hubhawks</h3>
-            <p className="mt-2 text-gray-600 text-sm">Your partner in publishing success.</p>
+            <Image src="/hubhawks.png" width={100} height={50} alt="hero" className="w-fit mx-auto md:mx-0"></Image>
+            <p className=" text-gray-600 text-sm">Your partner in publishing success.</p>
           </div>
 
           {/* Spacer Column */}
@@ -38,10 +40,20 @@ export const Footer = () => {
 
 
           <div className="md:col-span-2">
-            <h4 className="font-semibold text-gray-800">Contact</h4>
-            <nav className="mt-4 flex flex-col gap-3 text-sm">
-              <a href="mailto:tanvi@hubhawks.com" className="text-gray-600 hover:text-rose-600 transition-colors">tanvi@hubhawks.com</a>
-            </nav>
+            <h4 className="font-semibold text-gray-800">Get In Touch</h4>
+            <div className="flex flex-col gap-3">
+              <p className="text-sm text-gray-600 mt-4">
+                Unit-125, First floor, Vipul Trade Centre,<br/>
+                Sector-48, Sohna Road, South City-2<br/>
+                Gurugram, Haryana, 122018
+              </p>
+              <a href="tel:+911234567890" className="text-sm text-gray-600 hover:text-rose-600 transition-colors">
+                +91 12345 67890
+              </a>
+              <a href="mailto:tanvi@hubhawks.com" className="text-sm text-gray-600 hover:text-rose-600 transition-colors">
+                tanvi@hubhawks.com
+              </a>
+              </div>
           </div>
         
 

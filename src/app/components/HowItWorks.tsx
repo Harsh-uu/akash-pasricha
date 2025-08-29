@@ -17,8 +17,8 @@ const processSteps = [
 
 export const HowItWorks = () => {
   return (
-    <section className="py-20 md:py-28">
-        <h2 className="text-3xl md:text-4xl font-bold text-gray-900 font-heading text-center">Your Journey to a Bestseller</h2>
+    <section className=' pb-20 md:pb-28'>
+        <h2 className="text-4xl md:text-5xl font-bold text-gray-900 font-heading text-center">The Road to <span className='font-caveat text-5xl md:text-6xl'>Publishing Success</span> </h2>
         <div className="mt-16 flex flex-col md:flex-row justify-between items-center gap-10 md:gap-4 relative">
             {/* Dashed line for desktop */}
             <div className="hidden md:block absolute top-1/2 left-0 w-full h-0.5 border-t-2 border-dashed border-gray-300 -translate-y-1/2 -z-10"></div>

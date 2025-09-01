@@ -2,7 +2,7 @@
 "use client";
 
 import Image from "next/image";
-import { motion, easeOut } from "framer-motion";
+import { easeOut } from "framer-motion";
 
 // --- TEAM DATA ---
 // Easily add or remove team members here.
@@ -60,17 +60,6 @@ const teamMembers = [
 ];
 
 // --- Animation Variants for Cards ---
-const cardVariants = {
-  hidden: { opacity: 0, scale: 0.9 },
-  visible: {
-    opacity: 1,
-    scale: 1,
-    transition: {
-      duration: 0.5,
-      ease: easeOut,
-    },
-  },
-};
 
 export const OurTeam = () => {
   return (
@@ -84,13 +73,8 @@ export const OurTeam = () => {
 
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 md:gap-12 max-w-6xl mx-auto">
           {teamMembers.map((member, index) => (
-            <motion.div
+            <div
               key={member.id}
-              variants={cardVariants}
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true, amount: 0.3 }}
-              transition={{ delay: index * 0.1 }} // Staggered animation
               className="text-center"
             >
               {/* --- Team Member Image --- */}
@@ -108,7 +92,7 @@ export const OurTeam = () => {
                 <h3 className="text-2xl font-bold text-gray-900 font-caveat">{member.name}</h3>
                 <p className="text-rose-600 font-semibold">{member.role}</p>
               </div>
-            </motion.div>
+            </div>
           ))}
         </div>
       </div>

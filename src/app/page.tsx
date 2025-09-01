@@ -9,7 +9,6 @@ import { HowItWorks } from "./components/HowItWorks";
 import { Info } from "./components/Info";
 import { Bestsellers } from "./components/Bestsellers";
 import { Testimonials } from "./components/Testimonials";
-import { useState } from "react";
 import { useUIStore } from "@/store/useUIStore";
 
 
@@ -23,11 +22,11 @@ export default function Home() {
       <main className="mx-auto max-w-7xl px-4">
           <Hero />
           <Info/>
+          <CTASection />
           <Bestsellers />
           <HowItWorks />
           <Testimonials />
           <FAQ/>
-          <CTASection />
       </main>
       <Footer />
     </div>

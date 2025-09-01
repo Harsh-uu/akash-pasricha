@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 import { easeOut } from "framer-motion";
 import { OurTeam } from "../components/OurTeam";
 import { useUIStore } from "@/store/useUIStore";
-import { OurJourneyPage } from "../components/OurJourney";
+import { OurJourney } from "../components/OurJourney";
 
 // Animation variants for sections
 const sectionVariants = {
@@ -81,7 +81,7 @@ const Page = () => {
       
       {/* --- Meet the CEO/Founder Section --- */}
         <OurTeam/>
-        <OurJourneyPage/>
+        <OurJourney/>
     </div>
   );
 };

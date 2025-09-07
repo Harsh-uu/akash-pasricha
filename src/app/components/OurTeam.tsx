@@ -63,11 +63,11 @@ const teamMembers = [
 
 export const OurTeam = () => {
   return (
-    <section className="pb-20 md:pb-28">
+    <section className="py-20 md:py-28">
       <div className="mx-auto px-4">
         <div className="text-center mb-12 md:mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-900">
-            Our <span className="text-5xl md:text-6xl font-black font-caveat"> Team</span>
+          <h2 className="text-4xl md:text-5xl font-poppins font-semibold text-gray-900">
+            Our <span className="text-rose-600"> Team</span>
           </h2>
         </div>
 
@@ -89,7 +89,7 @@ export const OurTeam = () => {
 
               {/* --- Team Member Details --- */}
               <div>
-                <h3 className="text-2xl font-bold text-gray-900 font-caveat">{member.name}</h3>
+                <h3 className="text-xl font-semiboldbold text-gray-900 font-poppins">{member.name}</h3>
                 <p className="text-rose-600 font-semibold">{member.role}</p>
               </div>
             </div>

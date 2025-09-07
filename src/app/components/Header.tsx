@@ -16,14 +16,18 @@ const navLinks = [
 ];
 
 export const Header = () => {
-  const { mobileMenuOpen, toggleMobileMenu, closeMobileMenu } = useUIStore();
+  const { mobileMenuOpen, toggleMobileMenu, closeMobileMenu, modalOpen } = useUIStore();
 
   return (
     <motion.header
       initial={{ y: -100 }}
       animate={{ y: 0 }}
       transition={{ duration: 0.5, ease: "easeOut" }}
-      className="sticky top-0 z-50 bg-white/90 backdrop-blur-sm shadow-sm border-b border-gray-200/80"
+      className={`sticky top-0 z-20 bg-white/80 backdrop-blur-md font-poppins ${
+        modalOpen 
+          ? " blur-md bg-white/50" 
+          : ""
+      } shadow-sm border-b border-gray-200/80`}
     >
       <div className="max-w-7xl mx-auto flex justify-between items-center px-4">
         {/* --- Logo --- */}
@@ -57,13 +61,13 @@ export const Header = () => {
           <div className="hidden lg:flex items-center gap-4">
             <Link
               href="/publish"
-              className="bg-white text-gray-900 text-sm font-semibold px-5 py-2.5 hover:bg-gray-100 border border-gray-600"
+              className="bg-white text-gray-900 text-sm font-medium px-5 py-2.5 hover:bg-gray-100 border border-gray-600"
             >
               Contact Us
             </Link>
             <Link
               href="/publish"
-              className="bg-rose-600 text-white text-sm font-semibold px-5 py-2.5 hover:bg-rose-700"
+              className="bg-rose-600 text-white text-sm font-medium px-5 py-2.5 hover:bg-rose-700"
             >
               Publish with Us
             </Link>

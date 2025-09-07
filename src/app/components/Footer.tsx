@@ -19,7 +19,7 @@ export const Footer = () => {
 
           {/* Column 2: Navigation */}
           <div className="md:col-span-2">
-            <h4 className="font-semibold text-gray-800">Navigation</h4>
+            <h4 className="font-medium text-gray-800">Navigation</h4>
             <nav className="mt-4 flex flex-col gap-3 text-sm">
               <a href="#services" className="text-gray-600 hover:text-rose-600 transition-colors">Services</a>
               <a href="#testimonials" className="text-gray-600 hover:text-rose-600 transition-colors">Case Studies</a>
@@ -31,7 +31,7 @@ export const Footer = () => {
 
           {/* Column 3: Legal & Social */}
           <div className="md:col-span-2">
-            <h4 className="font-semibold text-gray-800">Legal</h4>
+            <h4 className="font-medium text-gray-800">Legal</h4>
             <nav className="mt-4 flex flex-col gap-3 text-sm">
               <a href="#" className="text-gray-600 hover:text-rose-600 transition-colors">Privacy Policy</a>
               <a href="#" className="text-gray-600 hover:text-rose-600 transition-colors">Terms of Service</a>
@@ -40,7 +40,7 @@ export const Footer = () => {
 
 
           <div className="md:col-span-2">
-            <h4 className="font-semibold text-gray-800">Get In Touch</h4>
+            <h4 className="font-medium text-gray-800">Get In Touch</h4>
             <div className="flex flex-col gap-3">
               <p className="text-sm text-gray-600 mt-4">
                 Unit-125, First floor, Vipul Trade Centre,<br/>

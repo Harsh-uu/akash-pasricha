@@ -28,7 +28,15 @@ module.exports = {
   			caveat: [
   				'var(--font-caveat)',
   				'serif'
-  			]
+  			],
+  			bebas: [
+  				'var(--font-bebas)',
+  				'serif'
+  			],
+  			poppins: [
+  				'var(--font-poppins)',
+  				'serif'
+  			],
   		},
   		colors: {
   			rose: {

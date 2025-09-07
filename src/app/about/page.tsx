@@ -5,6 +5,7 @@ import { easeOut } from "framer-motion";
 import { OurTeam } from "../components/OurTeam";
 import { useUIStore } from "@/store/useUIStore";
 import { OurJourney } from "../components/OurJourney";
+import { FinalCTA } from "../components/FinalCTA";
 
 // Animation variants for sections
 const sectionVariants = {
@@ -19,26 +20,42 @@ const sectionVariants = {
   },
 };
 
-
-
 const Page = () => {
   const { mobileMenuOpen } = useUIStore();
 
   return (
     <div className="bg-white text-gray-800 font-sans">
       {/* --- Main Hero Section --- */}
-      <motion.section 
+      <motion.section
         initial="hidden"
         animate="visible"
         variants={sectionVariants}
-        className="text-center py-20 md:py-32"
+        className="text-center pt-12 sm:pt-20 pb-20 md:pb-28 relative isolate overflow-hidden"
       >
         <div className="max-w-7xl mx-auto px-4">
-          <h1 className='text-4xl md:text-5xl font-extrabold text-gray-900'>
-            About <span className="text-5xl md:text-6xl font-caveat font-black"> Hubhawks</span>
+          <div
+            aria-hidden="true"
+            className="hidden md:block absolute bottom-0 right-0 translate-y-1/2 w-[50rem] h-[50rem] bg-rose-100 rounded-full translate-x-1/2 blur-3xl opacity-90"
+          />
+          <h1 className="text-4xl md:text-5xl font-poppins font-semibold text-gray-900">
+            About{" "}
+            <span className="text-rose-600">
+              {" "}
+              Hubhawks
+            </span>
           </h1>
-          <p className="mt-4 max-w-2xl mx-auto text-lg text-gray-600">
-            We are a melting pot of ideas, experiences, and knowledge, dedicated to making your writing journey easier and more successful.
+          <p className="mt-4 max-w-3xl mx-auto text-lg text-gray-600 leading-relaxed">
+            We are a melting pot of ideas, experiences, and knowledge, dedicated
+            to making your writing journey easier and more successful. Founded
+            by bestselling author Kevin Missal, Hubhawks brings together
+            industry experts, seasoned editors, and publishing professionals who
+            understand the challenges authors face.
+          </p>
+          <p className="mt-4 max-w-3xl mx-auto text-lg text-gray-600 leading-relaxed">
+            Our mission is to demystify the publishing process and provide
+            authors with the tools, guidance, and support they need to transform
+            their manuscripts into professional publications that stand out in
+            today's competitive market.
           </p>
         </div>
       </motion.section>
@@ -46,30 +63,40 @@ const Page = () => {
       {/* --- Our Story & Video Section --- */}
       <motion.section
         initial="hidden"
-        whileInView="visible"
+        animate="visible"
         viewport={{ once: true, amount: 0.3 }}
         variants={sectionVariants}
-        className="pb-20 md:pb-32"
+        className="py-20 md:py-28 bg-[#f9f9f9]"
       >
         <div className="max-w-7xl mx-auto px-4">
           <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-16">
             {/* Text Content */}
             <div className="lg:w-1/2 text-center lg:text-left">
-              <h2 className="font-bold text-rose-600 text-4xl font-caveat">Our Story</h2>
+              <h2 className="font-semibold text-rose-600 text-4xl font-poppins">
+                Our Story
+              </h2>
               <p className="mt-4 text-md px-3 sm:px-0 sm:text-lg text-gray-600 leading-relaxed">
-                Hubhawks was founded to tackle the fears and doubts that hold aspiring authors back. For many writers, the greatest obstacle isn’t just the blank page, but the fear of failure, rejection, and getting lost in the crowded market. Our sessions are designed to confront these challenges head-on, giving you the clarity, tools, and confidence to move forward. We’re here to replace uncertainty with direction, transform hesitation into action, and guide you toward the bestseller lists with courage and purpose.
+                Hubhawks was founded to tackle the fears and doubts that hold
+                aspiring authors back. For many writers, the greatest obstacle
+                isn’t just the blank page, but the fear of failure, rejection,
+                and getting lost in the crowded market. Our sessions are
+                designed to confront these challenges head-on, giving you the
+                clarity, tools, and confidence to move forward. We’re here to
+                replace uncertainty with direction, transform hesitation into
+                action, and guide you toward the bestseller lists with courage
+                and purpose.
               </p>
             </div>
-            
+
             {/* Video Content */}
             <div className="lg:w-1/2 w-full">
-              <div className="relative aspect-video rounded-xl shadow-2xl overflow-hidden border-4 border-gray-100">
-                <iframe 
+              <div className="relative aspect-video shadow-2xl overflow-hidden">
+                <iframe
                   className="absolute top-0 left-0 w-full h-full"
-                  src="https://www.youtube.com/embed/LOwVLyPCdgM?si=lHIDcRVIamkzh4PM" 
-                  title="YouTube video player" 
-                  frameBorder="0" 
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture;" 
+                  src="https://www.youtube.com/embed/LOwVLyPCdgM?si=lHIDcRVIamkzh4PM"
+                  title="YouTube video player"
+                  frameBorder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture;"
                   allowFullScreen
                 />
               </div>
@@ -78,10 +105,16 @@ const Page = () => {
         </div>
       </motion.section>
 
-      
       {/* --- Meet the CEO/Founder Section --- */}
-        <OurTeam/>
-        <OurJourney/>
+      <div className="relative px-4 isolate overflow-hidden">
+        <div
+          aria-hidden="true"
+          className="hidden md:block absolute top-0 left-0 -translate-y-1/2 w-[45rem] h-[45rem] bg-rose-100 rounded-full opacity-90 blur-3xl -translate-x-1/2"
+        />
+        <OurTeam />
+      </div>
+      <OurJourney />
+      <FinalCTA />
     </div>
   );
 };

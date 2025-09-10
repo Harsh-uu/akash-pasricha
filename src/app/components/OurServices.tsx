@@ -17,6 +17,7 @@ import {
   Feather,
   Star,
 } from "lucide-react";
+import Link from "next/link";
 import React from "react";
 
 // --- Data for Services ---
@@ -97,13 +98,7 @@ export const OurServices = () => {
                     </p>
 
                     {/* --- "Learn More" Button (Visible on Hover) --- */}
-                    <a
-                      href="#" // Link to the specific service page
-                      className="mt-6 inline-flex items-center font-semibold text-rose-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-                    >
-                      Learn More
-                      <ChevronRight className="w-4 h-4 ml-1" />
-                    </a>
+                
                   </div>
                 </div>
               </CarouselItem>
@@ -111,9 +106,17 @@ export const OurServices = () => {
           </CarouselContent>
 
           {/* --- Navigation Buttons --- */}
-          <CarouselPrevious className="absolute left-[-20px] md:left-[-40px] top-1/2 -translate-y-1/2" />
-          <CarouselNext className="absolute right-[-20px] md:right-[-40px] top-1/2 -translate-y-1/2" />
+          <CarouselPrevious className="absolute left-[-25px] md:left-[-40px] top-1/2 -translate-y-1/2" />
+          <CarouselNext className="absolute right-[-25px] md:right-[-40px] top-1/2 -translate-y-1/2" />
         </Carousel>
+        <div className="mt-12 flex justify-between">
+          <Link
+                href="/services" // Link to your publishing page
+                className=" px-4 py-2 bg-rose-600 text-white font-poppins uppercase font-medium hover:bg-rose-800 mx-auto transition-all duration-300 cursor-pointer"
+              >
+                LEARN MORE
+              </Link>
+            </div>
       </div>
     </section>
   );

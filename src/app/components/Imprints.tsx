@@ -2,6 +2,7 @@
 "use client";
 
 import Image from 'next/image';
+import Link from 'next/link';
 
 // --- Data for Imprints ---
 // This is now a static list.
@@ -48,6 +49,14 @@ export const Imprints = () => {
               <h3 className='text-sm font-semibold tracking-tight text-gray-700'>{imprint.name}</h3>
             </div>
           ))}
+              <div className="mt-12 flex justify-between">
+          <Link
+            href="/imprints" // Link to your publishing page
+            className=" px-4 py-2 bg-rose-600 text-white font-poppins uppercase font-medium hover:bg-rose-800 mx-auto transition-all duration-300 cursor-pointer"
+          >
+            LEARN MORE
+          </Link>
+        </div>
         </div>
       </div>
     </section>

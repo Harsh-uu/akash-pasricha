@@ -11,8 +11,6 @@ import { OurServices } from "./components/OurServices";
 import { Testimonials } from "./components/Testimonials";
 import { useUIStore } from "@/store/useUIStore";
 import { Imprints } from "./components/Imprints";
-import Image from "next/image";
-import { motion } from "framer-motion";
 
 export default function Home() {
   const { mobileMenuOpen } = useUIStore();
@@ -30,21 +28,6 @@ export default function Home() {
             aria-hidden="true"
             className="hidden md:block absolute bottom-0 right-0 translate-y-1/2 w-[50rem] h-[50rem] bg-rose-100 rounded-full translate-x-1/2 blur-3xl opacity-90"
           ></div>
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.4 }}
-            aria-hidden="true"
-            className="hidden md:block absolute -top-40 -left-48 w-[50rem] h-[40rem] opacity-60"
-          >
-            <Image
-              src="/wavy.png"
-              alt="wavy design"
-              width={400}
-              height={400}
-              className=" object-cover -rotate-[35deg] w-full h-full opacity-20"
-            />
-          </motion.div>
           <Hero />
         </div>
         <div className="bg-[#f9f9f9] px-4">

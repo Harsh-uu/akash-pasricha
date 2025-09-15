@@ -1,37 +1,33 @@
 "use client";
 import { useState, useEffect } from "react";
-import { Syne } from "next/font/google";
 import { motion, AnimatePresence } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import { FiChevronDown, FiX } from "react-icons/fi";
 import { useUIStore } from "@/store/useUIStore";
+import Link from "next/link";
+import { ArrowRight } from "lucide-react";
 
-const syne = Syne({ subsets: ["latin"] });
 
 const faqItems = [
     {
         question: "How does the publishing process work with Hubhawks?",
         answer:
             "Our process is designed to be simple and author-friendly. It starts with a manuscript assessment, followed by editing, cover design, formatting, and finally, distribution to major online retailers. We guide you through every step.",
-        border: true,
     },
     {
         question: "Do I retain full rights to my book?",
         answer:
             "Absolutely. You, the author, always retain 100% of the rights to your work. We are a service provider, and our goal is to help you publish, not to own your content. You have complete creative and legal control.",
-        border: true,
     },
     {
         question: "How long does the entire publishing process take?",
         answer:
             "The timeline can vary depending on the length of your manuscript and the services you choose. On average, the process from manuscript submission to publication takes between 3 to 6 months. We also offer expedited services if you have a specific deadline.",
-        border: true,
     },
     {
         question: "What kind of marketing support do you provide?",
         answer:
             "We offer a range of marketing services, including author website creation, social media strategy, press release distribution, and targeted ad campaigns. Our goal is to build your author platform and get your book in front of the right readers.",
-        border: false,
     },
 ];
 
@@ -161,16 +157,16 @@ const MotionComponent = ({ children }: { children: React.ReactNode }) => {
     );
 };
 
-const FAQItem = ({ question, answer, border }: { question: string; answer: string; border: boolean }) => {
+const FAQItem = ({ question, answer }: { question: string; answer: string}) => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <div className={border ? "border-b border-black" : ""}>
+    <div className="border-b border-gray-200 pb-4">
       <button
-        className="w-full flex justify-between items-center p-6 text-left"
+        className="w-full flex justify-between items-center  text-left"
         onClick={() => setIsOpen(!isOpen)}
       >
-        <span className="text-md sm:text-lg font-medium text-gray-900">{question}</span>
+        <span className="text-lg font-semibold text-gray-800">{question}</span>
         <motion.div
           animate={{ rotate: isOpen ? 180 : 0 }}
           transition={{ duration: 0.3 }}
@@ -187,8 +183,8 @@ const FAQItem = ({ question, answer, border }: { question: string; answer: strin
             transition={{ duration: 0.3, ease: "easeInOut" }}
             className="overflow-hidden"
           >
-            <div className="p-6 pt-0 text-gray-600">
-              <p className="text-md sm:text-lg">{answer}</p>
+            <div className=" mt-2 text-gray-600">
+              <p className="text-gray-600">{answer}</p>
             </div>
           </motion.div>
         )}
@@ -233,9 +229,9 @@ const FAQ = () => {
         <div className=" px-6">
           <div className="text-center mb-16">
             <h2
-              className={`text-5xl md:text-6xl font-poppins font-semibold text-[#111827]`}
+              className={`text-4xl md:text-5xl font-poppins font-semibold text-gray-900`}
             >
-              FAQ<span className="text-rose-600">s</span>
+              Frequently Asked <span className="text-rose-600">Questions</span>
             </h2>
           </div>
           <MotionComponent>
@@ -245,9 +241,13 @@ const FAQ = () => {
                   key={index}
                   question={item.question}
                   answer={item.answer}
-                  border={item.border}
                 />
               ))}
+          </div>
+              <div className="mt-8 text-center">
+            <Link href="/support" className="inline-flex items-center gap-2 font-semibold text-rose-600 hover:underline">
+              View All FAQs <ArrowRight size={18} />
+            </Link>
             </div>
           </MotionComponent>
         </div>

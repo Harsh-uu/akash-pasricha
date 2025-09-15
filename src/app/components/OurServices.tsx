@@ -26,32 +26,38 @@ const servicesData = [
   {
     icon: <Edit size={28} />,
     title: "Editing & Proofreading",
-    description: "Polish your manuscript to perfection with our expert editors.",
+    description:
+      "Polish your manuscript to perfection with our expert editors.",
   },
   {
     icon: <BookOpen size={28} />,
     title: "Cover Design",
-    description: "Create a stunning, professional book that captures readers' attention.",
+    description:
+      "Create a stunning, professional book that captures readers' attention.",
   },
   {
     icon: <Send size={28} />,
     title: "Publishing & Distribution",
-    description: "Navigate the complexities of publishing and reach readers worldwide.",
+    description:
+      "Navigate the complexities of publishing and reach readers worldwide.",
   },
   {
     icon: <Mic size={28} />,
     title: "Audiobook Production",
-    description: "Bring your story to life with high-quality audiobook narration and production.",
+    description:
+      "Bring your story to life with high-quality audiobook narration and production.",
   },
   {
     icon: <Feather size={28} />,
     title: "Author Branding",
-    description: "Build your unique author platform and connect with your target audience.",
+    description:
+      "Build your unique author platform and connect with your target audience.",
   },
   {
     icon: <Star size={28} />,
     title: "Book Marketing",
-    description: "Launch your book with a strategic marketing plan designed to create bestsellers.",
+    description:
+      "Launch your book with a strategic marketing plan designed to create bestsellers.",
   },
 ];
 
@@ -98,7 +104,6 @@ export const OurServices = () => {
                     </p>
 
                     {/* --- "Learn More" Button (Visible on Hover) --- */}
-                
                   </div>
                 </div>
               </CarouselItem>
@@ -111,12 +116,12 @@ export const OurServices = () => {
         </Carousel>
         <div className="mt-12 flex justify-between">
           <Link
-                href="/services" // Link to your publishing page
-                className=" px-4 py-2 bg-rose-600 text-white font-poppins uppercase font-medium hover:bg-rose-800 mx-auto transition-all duration-300 cursor-pointer"
-              >
-                LEARN MORE
-              </Link>
-            </div>
+            href="/services" // Link to your publishing page
+            className=" px-4 py-2 bg-rose-600 text-white font-poppins uppercase font-medium hover:bg-rose-800 mx-auto transition-all duration-300 cursor-pointer"
+          >
+            LEARN MORE
+          </Link>
+        </div>
       </div>
     </section>
   );

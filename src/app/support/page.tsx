@@ -3,8 +3,7 @@
 import { motion } from "framer-motion";
 import { easeOut } from "framer-motion";
 import { useUIStore } from "@/store/useUIStore";
-import { FinalCTA } from "../components/FinalCTA";
-import { DetailedServices } from "../components/DetailedServices";
+import SupportPage from "../components/SupportPage";
 
 // Animation variants for sections
 const sectionVariants = {
@@ -37,18 +36,13 @@ const Page = () => {
             className="hidden md:block absolute bottom-0 right-0 translate-y-1/2 w-[50rem] h-[50rem] bg-rose-100 rounded-full -z-10 translate-x-1/2 blur-3xl opacity-90"
           />
           <h1 className="text-4xl md:text-5xl font-poppins font-semibold text-gray-900">
-            Publish With <span className="text-rose-600">Confidence</span>
+            How Can We <span className="text-rose-600">Help?</span>
           </h1>
           <p className="mt-4 max-w-3xl mx-auto text-lg text-gray-600 leading-relaxed">
-            Publishing a book is more than putting words on paper. It is about
-            shaping your ideas into a professional work that readers can connect
-            with and remember. At Hubhawks, we simplify this journey by bringing
-            together creativity, precision, and expertise at every stage.
+            We’re here to support you every step of the way on your publishing journey. Whether you’re just getting started with an idea or you’re ready to bring your manuscript to life, our team is committed to answering your questions and providing the guidance you need. From understanding our services to exploring how we can collaborate, we’re always ready to listen and help you move forward with clarity and confidence.
           </p>
           <p className="mt-4 max-w-3xl mx-auto text-lg text-gray-600 leading-relaxed">
-            From editing to design and distribution, we take care of the details
-            so you can focus on your writing. The result is a book you can
-            proudly share with the world.
+            You can find the best ways to reach us below. Simply choose the option that is most convenient for you and let’s begin the conversation.
           </p>
         </div>
       </motion.section>
@@ -60,10 +54,8 @@ const Page = () => {
         variants={sectionVariants}
         className="bg-[#f9f9f9]"
       >
-        <DetailedServices />
+        <SupportPage />
       </motion.section>
-
-      <FinalCTA />
     </div>
   );
 };

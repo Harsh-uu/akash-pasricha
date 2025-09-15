@@ -1,16 +1,17 @@
 // src/components/DetailedServices.tsx
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
+import { type CarouselApi } from "@/components/ui/carousel"; // IMPORTED: Carousel API type
 import {
   Carousel,
   CarouselContent,
   CarouselItem,
   CarouselNext,
   CarouselPrevious,
-} from "@/components/ui/carousel"; // Adjust the import path if needed
+} from "@/components/ui/carousel";
 import {
   Edit,
   BookOpen,
@@ -105,8 +106,37 @@ const servicesData = [
 
 // --- Main Component ---
 export const DetailedServices = () => {
+  // --- ADDED: State for Carousel API ---
+  const [api, setApi] = useState<CarouselApi>();
   const [activeTab, setActiveTab] = useState(servicesData[0].id);
   const activeService = servicesData.find((service) => service.id === activeTab);
+
+  // --- ADDED: Effect to sync carousel scroll with active tab ---
+  useEffect(() => {
+    if (!api) {
+      return;
+    }
+
+    // Function to run when a new slide is selected
+    const onSelect = () => {
+      const selectedIndex = api.selectedScrollSnap();
+      const selectedServiceId = servicesData[selectedIndex].id;
+      setActiveTab(selectedServiceId);
+    };
+
+    api.on("select", onSelect);
+
+    // Cleanup listener on component unmount
+    return () => {
+      api.off("select", onSelect);
+    };
+  }, [api]);
+
+  // --- ADDED: Handler to scroll carousel on button click ---
+  const handleButtonClick = (serviceId: string, index: number) => {
+    setActiveTab(serviceId);
+    api?.scrollTo(index);
+  };
 
   return (
     <section id="detailed-services" className="py-20 md:py-28 bg-gray-50">
@@ -114,7 +144,7 @@ export const DetailedServices = () => {
         {/* --- Section Header --- */}
         <div className="text-center mb-6 md:mb-8">
           <h2 className="text-3xl md:text-4xl font-semibold text-gray-900">
-            Services Designed for  <span className="text-rose-600">Authors</span>
+            Services Designed for <span className="text-rose-600">Authors</span>
           </h2>
           <p className="mt-4 max-w-2xl mx-auto md:text-lg text-gray-600">
             Everything you need to write, publish, and market your masterpiece.
@@ -124,20 +154,23 @@ export const DetailedServices = () => {
         {/* --- Shadcn Carousel for Tab Buttons --- */}
         <div className="relative max-w-sm sm:max-w-md md:max-w-2xl lg:max-w-4xl mx-auto">
           <Carousel
+            // --- ADDED: Set API and updated options ---
+            setApi={setApi}
             opts={{
-              align: "start",
+              align: "center",
+              loop: true,
             }}
             className="w-full"
           >
             <CarouselContent className="-ml-2">
-              {servicesData.map((service) => (
+              {servicesData.map((service, index) => (
                 <CarouselItem
                   key={service.id}
-                  // --- KEY CHANGE HERE: Responsive basis for item count ---
                   className="basis-full md:basis-1/2 lg:basis-1/3 pl-2 px-10 md:px-4"
                 >
                   <button
-                    onClick={() => setActiveTab(service.id)}
+                    // --- MODIFIED: Using new click handler ---
+                    onClick={() => handleButtonClick(service.id, index)}
                     className={`w-full shadow-lg flex items-center justify-center gap-2 px-4 py-3 font-semibold transition-colors duration-300 my-8
                       ${
                         activeTab === service.id

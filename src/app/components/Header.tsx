@@ -12,7 +12,7 @@ const navLinks = [
   { href: "/services", label: "Services" },
   { href: "/imprints", label: "Our Imprints" },
   { href: "/careers", label: "Careers" },
-  { href: "/contact", label: "Support" },
+  { href: "/support", label: "Support" },
 ];
 
 export const Header = () => {
@@ -25,7 +25,7 @@ export const Header = () => {
       transition={{ duration: 0.5, ease: "easeOut" }}
       className={`sticky top-0 z-20 bg-white/80 backdrop-blur-md font-poppins ${
         modalOpen 
-          ? " blur-md bg-white/50" 
+          ? " bg-white/50 -z-20 md:z-10 blur-sm" 
           : ""
       } shadow-sm border-b border-gray-200/80`}
     >
@@ -60,7 +60,7 @@ export const Header = () => {
           {/* --- Call-to-Action Buttons (Desktop) --- */}
           <div className="hidden lg:flex items-center gap-4">
             <Link
-              href="/publish"
+              href="/contact"
               className="bg-white text-gray-900 text-sm font-medium px-5 py-2.5 hover:bg-gray-100 border border-gray-600"
             >
               Contact Us
@@ -102,7 +102,7 @@ export const Header = () => {
             ))}
             <div className="mt-4 space-y-2 p-4">
               <Link
-                href="/publish"
+                href="/contact"
                 className="block w-full bg-white text-gray-900 text-center font-semibold px-5 py-2.5 hover:bg-gray-100 border border-gray-600"
                 onClick={closeMobileMenu}
               >

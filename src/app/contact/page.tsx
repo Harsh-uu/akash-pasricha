@@ -2,9 +2,16 @@
 
 import { motion } from "framer-motion";
 import { easeOut } from "framer-motion";
+import { OurTeam } from "../components/OurTeam";
 import { useUIStore } from "@/store/useUIStore";
+import { OurJourney } from "../components/OurJourney";
 import { FinalCTA } from "../components/FinalCTA";
+import { OurServices } from "../components/OurServices";
 import { DetailedServices } from "../components/DetailedServices";
+import { DetailedImprints } from "../components/DetailedImprints";
+import { OpenPositions } from "../components/OpenPositions";
+import { LifeAtHubhawks } from "../components/LifeAtHubhawks";
+import { InquiryForm } from "../components/InquiryForm";
 
 // Animation variants for sections
 const sectionVariants = {
@@ -34,36 +41,17 @@ const Page = () => {
         <div className="max-w-7xl mx-auto px-4">
           <div
             aria-hidden="true"
-            className="hidden md:block absolute bottom-0 right-0 translate-y-1/2 w-[50rem] h-[50rem] bg-rose-100 rounded-full -z-10 translate-x-1/2 blur-3xl opacity-90"
+            className="hidden md:block absolute top-0 left-0 -translate-y-1/2 w-[45rem] h-[45rem] bg-rose-100 rounded-full opacity-90 blur-3xl -translate-x-1/2"
           />
           <h1 className="text-4xl md:text-5xl font-poppins font-semibold text-gray-900">
-            Publish With <span className="text-rose-600">Confidence</span>
+            Get In <span className="text-rose-600">Touch</span>
           </h1>
           <p className="mt-4 max-w-3xl mx-auto text-lg text-gray-600 leading-relaxed">
-            Publishing a book is more than putting words on paper. It is about
-            shaping your ideas into a professional work that readers can connect
-            with and remember. At Hubhawks, we simplify this journey by bringing
-            together creativity, precision, and expertise at every stage.
-          </p>
-          <p className="mt-4 max-w-3xl mx-auto text-lg text-gray-600 leading-relaxed">
-            From editing to design and distribution, we take care of the details
-            so you can focus on your writing. The result is a book you can
-            proudly share with the world.
+            Ready to start your project? Fill out the form below.
           </p>
         </div>
+        <InquiryForm />
       </motion.section>
-
-      <motion.section
-        initial="hidden"
-        animate="visible"
-        viewport={{ once: true, amount: 0.3 }}
-        variants={sectionVariants}
-        className="bg-[#f9f9f9]"
-      >
-        <DetailedServices />
-      </motion.section>
-
-      <FinalCTA />
     </div>
   );
 };

@@ -88,7 +88,7 @@ export const OurJourney = () => {
               {journeyData.map((item) => (
                 <div
                   key={item.id}
-                  className="flex-shrink-0 px-4 w-full basis-4/5 sm:basis-3/5 md:basis-[48%] lg:basis-[32%]"
+                  className="flex-shrink-0 px-4 w-full basis-4/5"
                 >
                   <div className="relative flex flex-col items-center h-full">
                     {/* --- Spacer to push the card down --- */}

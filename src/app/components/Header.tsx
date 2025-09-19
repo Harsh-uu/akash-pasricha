@@ -1,6 +1,5 @@
 "use client";
 
-import { motion } from "framer-motion";
 import { Menu, X } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
@@ -8,63 +7,42 @@ import { useUIStore } from "@/store/useUIStore"; // adjust path if needed
 
 const navLinks = [
   { href: "/", label: "Home" },
+  { href: "/books", label: "Books" },
   { href: "/about", label: "About" },
-  { href: "/services", label: "Services" },
-  { href: "/imprints", label: "Our Imprints" },
-  { href: "/careers", label: "Careers" },
-  { href: "/support", label: "Support" },
+  { href: "/authors", label: "Authors" },
+  { href: "/events", label: "Events" },
+  { href: "/contact", label: "Contact" },
 ];
 
 export const Header = () => {
-  const { mobileMenuOpen, toggleMobileMenu, closeMobileMenu, modalOpen } = useUIStore();
+  const { mobileMenuOpen, toggleMobileMenu, closeMobileMenu, modalOpen } =
+    useUIStore();
 
   return (
-    <motion.header
-      initial={{ y: -100 }}
-      animate={{ y: 0 }}
-      transition={{ duration: 0.5, ease: "easeOut" }}
-      className={`sticky top-0 z-20 bg-white/80 backdrop-blur-md font-poppins ${
-        modalOpen 
-          ? " bg-white/50 -z-20 md:z-10 blur-sm" 
-          : ""
-      } shadow-sm border-b border-gray-200/80`}
+    <header
+      className={` bg-white/80 font-poppins shadow-md ${
+        modalOpen ? " bg-white/50 -z-20 md:z-10 blur-sm" : ""
+      } border-b border-gray-200/80`}
     >
       <div className="max-w-7xl mx-auto flex justify-between items-center px-4">
         {/* --- Logo --- */}
-        <Link href="/" className="flex-shrink-0 mt-2">
+        <Link href="/" className="flex-shrink-0 mt-2 flex items-center">
           <Image
-            src="/hubhawks.png"
+            src="/nuvoice.webp"
             alt="Hubhawks Logo"
             width={120}
             height={50}
             priority
-            className="h-16 w-auto md:h-24"
+            className="h-16 w-auto mb-2"
           />
+          <span className="text-3xl hidden lg:block font-serif font-medium ml-2 text-rose-600">
+            NuVoice <span className="italic -ml-1">Press</span>
+          </span>
         </Link>
 
         <div className="flex gap-8 uppercase">
-          {/* --- Desktop Navigation --- */}
-          <nav className="hidden lg:flex items-center gap-8 text-sm font-medium text-gray-700">
-            {navLinks.map((link) => (
-              <Link
-                key={link.href}
-                href={link.href}
-                className="relative group transition-colors hover:text-rose-600"
-              >
-                {link.label}
-                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-rose-600 transition-all duration-300 group-hover:w-full"></span>
-              </Link>
-            ))}
-          </nav>
-
           {/* --- Call-to-Action Buttons (Desktop) --- */}
           <div className="hidden lg:flex items-center gap-4">
-            <Link
-              href="/contact"
-              className="bg-white text-gray-900 text-sm font-medium px-5 py-2.5 hover:bg-gray-100 border border-gray-600"
-            >
-              Contact Us
-            </Link>
             <Link
               href="/publish"
               className="bg-rose-600 text-white text-sm font-medium px-5 py-2.5 hover:bg-rose-700"
@@ -85,6 +63,19 @@ export const Header = () => {
           </div>
         </div>
       </div>
+
+      <nav className="hidden border-t lg:flex justify-center py-5 items-center gap-12 font-medium text-gray-900">
+        {navLinks.map((link) => (
+          <Link
+            key={link.href}
+            href={link.href}
+            className="relative group font-medium text-base transition-colors capitalize hover:text-rose-600"
+          >
+            {link.label}
+            <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-rose-600 transition-all duration-300 group-hover:w-full"></span>
+          </Link>
+        ))}
+      </nav>
 
       {/* --- Mobile Menu Panel --- */}
       {mobileMenuOpen && (
@@ -119,6 +110,6 @@ export const Header = () => {
           </nav>
         </div>
       )}
-    </motion.header>
+    </header>
   );
 };

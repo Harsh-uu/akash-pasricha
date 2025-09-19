@@ -7,18 +7,14 @@ import Link from "next/link";
 export const Founder = () => {
   return (
     <section
-      className="pb-20 md:pb-28 pt-12"
+      className="py-16"
     >
       <div className="max-w-7xl mx-auto px-4">
         {/* --- Heading (Outside the Container) --- */}
-        <div
-          className="text-center mb-12 md:mb-16"
-        >
-          <h2 className="text-4xl md:text-5xl font-poppins font-semibold text-gray-900">
+          <h2 className="text-4xl md:text-5xl mb-12 md:mb-16 text-center font-serif text-gray-900">
             Meet Our{" "}
-            <span className="text-rose-600">Founder</span>
+            <span className="text-rose-600 italic font-medium">Founder</span>
           </h2>
-        </div>
 
         {/* --- Main Content Container with Background --- */}
         <div
@@ -40,7 +36,7 @@ export const Founder = () => {
 
           {/* --- Text Content Column (Second) --- */}
           <div className="lg:w-1/2 w-full flex flex-col justify-center p-8 md:p-12 lg:p-16 text-center lg:text-left">
-          <h1 className="text-3xl font-semibold">Kevin Missal</h1>
+          <h1 className="text-3xl font-serif">Kevin Missal</h1>
             <p className="text-gray-600 lg:text-lg leading-relaxed mt-4">
               Kevin Missal wrote his first book at 14 and became a bestselling
               author by 22. As the founder of Hubhawks, he channels his passion

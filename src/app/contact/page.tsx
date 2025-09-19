@@ -43,8 +43,8 @@ const Page = () => {
             aria-hidden="true"
             className="hidden md:block absolute top-0 left-0 -translate-y-1/2 w-[45rem] h-[45rem] bg-rose-100 rounded-full opacity-90 blur-3xl -translate-x-1/2"
           />
-          <h1 className="text-4xl md:text-5xl font-poppins font-semibold text-gray-900">
-            Get In <span className="text-rose-600">Touch</span>
+          <h1 className="text-4xl md:text-5xl font-serif text-gray-900">
+            Get In <span className="text-rose-600 italic font-medium">Touch</span>
           </h1>
           <p className="mt-4 max-w-3xl mx-auto text-lg text-gray-600 leading-relaxed">
             Ready to start your project? Fill out the form below.

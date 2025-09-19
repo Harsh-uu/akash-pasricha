@@ -6,11 +6,10 @@ import FAQ from "./components/FAQ";
 import { Footer } from "./components/Footer";
 import { Header } from "./components/Header";
 import { Hero } from "./components/Hero";
-import { WhyChooseUs } from "./components/WhyChooseUs";
-import { OurServices } from "./components/OurServices";
-import { Testimonials } from "./components/Testimonials";
+import { UpcomingEvents } from "./components/UpcomingEvents";
 import { useUIStore } from "@/store/useUIStore";
-import { Imprints } from "./components/Imprints";
+import { Bestsellers } from "./components/Bestseller";
+import { OurAuthors } from "./components/OurAuthors";
 
 export default function Home() {
   const { mobileMenuOpen } = useUIStore();
@@ -21,42 +20,36 @@ export default function Home() {
         mobileMenuOpen ? "h-screen overflow-hidden" : ""
       }`}
     >
+      <p className="text-center bg-[#bb0000] text-white text-sm p-1.5 hover:underline cursor-pointer">
+        Sign up for Bookperk—fantastic deals, sweepstakes, bookish finds & more!
+      </p>
       <Header />
       <main className="mx-auto">
-        <div className="relative px-4 isolate overflow-hidden">
-          <div
-            aria-hidden="true"
-            className="hidden md:block absolute bottom-0 right-0 translate-y-1/2 w-[50rem] h-[50rem] bg-rose-100 rounded-full translate-x-1/2 blur-3xl opacity-90"
-          ></div>
+        <div className="relative isolate overflow-hidden">
           <Hero />
         </div>
-        <div className="bg-[#f9f9f9] px-4">
+        <div className="px-4">
+          <Bestsellers/>
+        </div>
+        <div className="px-4 relative isolate overflow-hidden">
+          <div
+            aria-hidden="true"
+            className=" absolute top-0 left-0 -translate-y-1/2 w-96 h-96 md:w-[45rem] md:h-[45rem] bg-rose-100 rounded-full opacity-90 blur-3xl -z-10 -translate-x-1/2"
+          />
           <Founder />
         </div>
+        <div className="px-4 bg-rose-600">
+          <OurAuthors/>
+        </div>
 
-        {/* --- WhyChooseUs with Visible Background --- */}
-        {/* 'isolate' creates a new stacking context, making z-index management easier */}
         <div className="relative px-4 isolate overflow-hidden">
           {/* Decorative Blob: Positioned before the content, no negative z-index */}
           <div
             aria-hidden="true"
-            className="hidden md:block absolute top-0 right-0 -translate-y-1/2 translate-x-1/2 w-[50rem] h-[50rem] bg-rose-100 rounded-full blur-3xl opacity-90"
+            className="absolute top-0 right-0 -translate-y-1/2 w-96 h-96 md:w-[45rem] md:h-[45rem] bg-rose-100 rounded-full opacity-90 blur-3xl -z-20 translate-x-1/2"
           />
 
-          <WhyChooseUs />
-        </div>
-
-        <div className="px-4 bg-[#f9f9f9]">
-          <OurServices />
-        </div>
-
-        {/* --- Testimonials with Visible Background --- */}
-        <div className="relative isolate overflow-hidden px-4">
-          <Testimonials />
-        </div>
-
-        <div className="px-4 bg-[#f9f9f9]">
-          <Imprints />
+          <UpcomingEvents />
         </div>
 
         {/* --- FAQ with Visible Background --- */}
@@ -64,7 +57,7 @@ export default function Home() {
           {/* Decorative Blob */}
           <div
             aria-hidden="true"
-            className="hidden md:block absolute top-0 left-0 -translate-y-1/2 w-[45rem] h-[45rem] bg-rose-100 rounded-full opacity-90 blur-3xl -translate-x-1/2"
+            className="absolute top-0 left-0 -translate-y-1/2 w-96 h-96 md:w-[45rem] md:h-[45rem] bg-rose-100 rounded-full opacity-90 blur-3xl -z-10 -translate-x-1/2"
           />
 
           <FAQ />

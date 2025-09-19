@@ -176,11 +176,11 @@ export const OurTeam = () => {
 
   return (
     <>
-      <section className="py-20 md:py-28">
+      <section className="py-16">
         <div className="mx-auto px-4">
           <div className="text-center mb-12 md:mb-16">
-            <h2 className="text-4xl md:text-5xl font-poppins font-semibold text-gray-900">
-              Our <span className="text-rose-600"> Team</span>
+            <h2 className="text-4xl md:text-5xl font-serif  text-gray-900">
+              Our <span className="text-rose-600 font-medium italic"> Team</span>
             </h2>
           </div>
 
@@ -209,7 +209,7 @@ export const OurTeam = () => {
 
                 {/* --- Team Member Details --- */}
                 <div>
-                  <h3 className="text-xl font-semibold text-gray-900 font-poppins">
+                  <h3 className="text-xl font-medium text-gray-900 font-serif">
                     {member.name}
                   </h3>
                   <p className="text-rose-600 font-semibold text-sm">{member.role}</p>

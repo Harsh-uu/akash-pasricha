@@ -63,14 +63,14 @@ export const OurJourney = () => {
 
       <section
         id="our-journey"
-        className="py-20 md:py-28 bg-[#f9f9f9] overflow-hidden"
+        className="py-16 bg-[#f9f9f9] overflow-hidden"
       >
         <div className="max-w-7xl mx-auto">
           {/* Section Header */}
           <div className="text-center mb-16 md:mb-20 px-4">
-            <h2 className="text-4xl md:text-5xl font-poppins font-semibold text-gray-900">
+            <h2 className="text-4xl md:text-5xl font-serif text-gray-900">
               How It All <br className="sm:hidden" />
-              <span className=" text-rose-600">
+              <span className=" text-rose-600 italic font-medium">
                 Began
               </span>
             </h2>

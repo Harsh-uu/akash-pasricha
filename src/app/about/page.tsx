@@ -1,24 +1,9 @@
 "use client";
 
-import { motion } from "framer-motion";
-import { easeOut } from "framer-motion";
 import { OurTeam } from "../components/OurTeam";
 import { useUIStore } from "@/store/useUIStore";
 import { OurJourney } from "../components/OurJourney";
 import { FinalCTA } from "../components/FinalCTA";
-
-// Animation variants for sections
-const sectionVariants = {
-  hidden: { opacity: 0, y: 50 },
-  visible: {
-    opacity: 1,
-    y: 0,
-    transition: {
-      duration: 0.6,
-      ease: easeOut,
-    },
-  },
-};
 
 const Page = () => {
   const { mobileMenuOpen } = useUIStore();
@@ -26,55 +11,46 @@ const Page = () => {
   return (
     <div className="bg-white text-gray-800 font-sans">
       {/* --- Main Hero Section --- */}
-      <motion.section
-        initial="hidden"
-        animate="visible"
-        variants={sectionVariants}
-        className="text-center pt-12 sm:pt-20 pb-20 md:pb-28 relative isolate overflow-hidden"
-      >
+      <section className="text-center py-10 md:py-16 relative isolate overflow-hidden">
         <div className="max-w-7xl mx-auto px-4">
           <div
             aria-hidden="true"
-            className="hidden md:block absolute bottom-0 right-0 translate-y-1/2 w-[50rem] h-[50rem] bg-rose-100 rounded-full translate-x-1/2 blur-3xl opacity-90"
+            className="hidden md:block absolute bottom-0 right-0 translate-y-1/2 w-[50rem] h-[50rem] bg-rose-100 rounded-full translate-x-1/2 blur-3xl -z-10 opacity-90"
           />
-          <h1 className="text-4xl md:text-5xl font-poppins font-semibold text-gray-900">
-            About{" "}
-            <span className="text-rose-600">
-              {" "}
-              Hubhawks
-            </span>
-          </h1>
-          <p className="mt-4 max-w-3xl mx-auto text-lg text-gray-600 leading-relaxed">
-            We are a melting pot of ideas, experiences, and knowledge, dedicated
-            to making your writing journey easier and more successful. Founded
-            by bestselling author Kevin Missal, Hubhawks brings together
-            industry experts, seasoned editors, and publishing professionals who
-            understand the challenges authors face.
+          <nav className="text-sm text-gray-500 mb-4 text-left" aria-label="Breadcrumb">
+            <ol className="list-none p-0 inline-flex">
+              <li className="flex items-center">
+                <a href="/" className="hover:underline">
+                  Home
+                </a>
+                <span className="mx-2">&gt;</span>
+              </li>
+              <li className="flex items-center text-gray-700 font-medium">
+                About
+              </li>
+            </ol>
+          </nav>
+          <div className="mb-8 text-left">
+            <h1 className="text-4xl md:text-5xl font-serif text-gray-900">
+              About
+            </h1>
+          </div>
+          <p className=" mx-auto text-lg text-left text-gray-600 leading-relaxed">
+            We are a vibrant melting pot of ideas, experiences, and knowledge, dedicated to making your writing journey easier, more rewarding, and ultimately more successful. Founded by bestselling author Kevin Missal, Hubhawks is more than just a publishing service—it's a community built by writers, for writers. Our team brings together industry experts, seasoned editors, creative designers, and publishing professionals who have worked with both debut and established authors. We understand the unique challenges, doubts, and aspirations that every writer faces, whether you're penning your first manuscript or preparing to launch your next bestseller.
           </p>
-          <p className="mt-4 max-w-3xl mx-auto text-lg text-gray-600 leading-relaxed">
-            Our mission is to demystify the publishing process and provide
-            authors with the tools, guidance, and support they need to transform
-            their manuscripts into professional publications that stand out in
-            today's competitive market.
+          <p className="hidden md:block mt-4 mx-auto text-lg text-left text-gray-600 leading-relaxed">
+            Our mission is to demystify the publishing process and empower authors at every stage of their creative journey. We provide a comprehensive suite of tools, personalized guidance, and unwavering support to help you transform your manuscript into a professional publication that stands out in today's competitive market. From developmental editing and cover design to marketing strategies and distribution, we walk alongside you at every step, ensuring you have the resources and confidence to succeed. At Hubhawks, we are committed to fostering a transparent, collaborative, and author-centric environment where your voice is heard, your vision is respected, and your success is our top priority.
           </p>
         </div>
-      </motion.section>
+      </section>
 
       {/* --- Our Story & Video Section --- */}
-      <motion.section
-        initial="hidden"
-        animate="visible"
-        viewport={{ once: true, amount: 0.3 }}
-        variants={sectionVariants}
-        className="py-20 md:py-28 bg-[#f9f9f9]"
-      >
+      <section className="py-16 bg-[#f9f9f9]">
         <div className="max-w-7xl mx-auto px-4">
           <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-16">
             {/* Text Content */}
             <div className="lg:w-1/2 text-center lg:text-left">
-              <h2 className="font-semibold text-rose-600 text-4xl font-poppins">
-                Our Story
-              </h2>
+              <h2 className="font-serif text-rose-600 text-4xl">Our Story</h2>
               <p className="mt-4 text-md px-3 sm:px-0 sm:text-lg text-gray-600 leading-relaxed">
                 Hubhawks was founded to tackle the fears and doubts that hold
                 aspiring authors back. For many writers, the greatest obstacle
@@ -103,7 +79,7 @@ const Page = () => {
             </div>
           </div>
         </div>
-      </motion.section>
+      </section>
 
       {/* --- Meet the CEO/Founder Section --- */}
       <div className="relative px-4 isolate overflow-hidden">

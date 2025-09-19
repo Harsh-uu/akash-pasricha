@@ -16,7 +16,7 @@ export const FinalCTA = ({
   // --- Provide sensible default values ---
   title = (
     <>
-      Ready to Tell <span className="text-rose-600">Your Story?</span>
+      Ready to Tell <span className="text-rose-600 italic font-medium">Your Story?</span>
     </>
   ),
   description = "Let's talk about your book. Schedule a free, no-obligation strategy call with our publishing experts today.",
@@ -24,10 +24,10 @@ export const FinalCTA = ({
   buttonLink = "/contact", // Default link to a contact page
 }: FinalCTAProps) => {
   return (
-    <section className="py-20 md:py-28 bg-white">
+    <section className="py-16 bg-white">
       <div className="max-w-7xl mx-auto px-4 text-center">
         {/* --- Headline --- */}
-        <h2 className="text-3xl md:text-4xl font-poppins font-semibold text-gray-900">
+        <h2 className="text-3xl md:text-4xl font-serif text-gray-900">
           {title}
         </h2>
 

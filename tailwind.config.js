@@ -36,7 +36,15 @@ module.exports = {
   			poppins: [
   				'var(--font-poppins)',
   				'serif'
-  			]
+  			],
+  			saira: [
+  				'var(--font-saira)',
+  				'serif'
+  			],
+  			epilogue: [
+  				'var(--font-epilogue)',
+  				'serif'
+  			],
   		},
   		colors: {
   			rose: {

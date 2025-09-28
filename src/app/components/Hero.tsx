@@ -1,133 +1,55 @@
 // src/components/Hero.tsx
 "use client";
 
-import React, { useState, useEffect, useRef } from "react";
 import Image from "next/image";
-import { type CarouselApi } from "@/components/ui/carousel";
-import {
-  Carousel,
-  CarouselContent,
-  CarouselItem,
-} from "@/components/ui/carousel";
-import Autoplay from "embla-carousel-autoplay";
-
-// --- UPDATED: Data now includes unique CTA text and links for each slide ---
-const carouselSlides = [
-  {
-    id: 1,
-    imageSrc: "/hero/slide1.jpg",
-    alt: "A beautifully designed book cover.",
-    ctaText: "Explore Design Services",
-    ctaLink: "/services/design",
-  },
-  {
-    id: 2,
-    imageSrc: "/hero/slide2.jpg",
-    alt: "An author signing books for fans.",
-    ctaText: "See Marketing Strategies",
-    ctaLink: "/services/marketing",
-  },
-  {
-    id: 3,
-    imageSrc: "/hero/slide3.jpg",
-    alt: "A high-quality audiobook production setup.",
-    ctaText: "Learn About Audiobooks",
-    ctaLink: "/services/audiobook",
-  },
-  {
-    id: 4,
-    imageSrc: "/hero/slide4.jpg",
-    alt: "A manuscript being professionally edited.",
-    ctaText: "Discover Our Editing Process",
-    ctaLink: "/services/editing",
-  },
-  {
-    id: 5,
-    imageSrc: "/hero/slide5.jpg",
-    alt: "An author's branded website on a laptop.",
-    ctaText: "Build Your Author Brand",
-    ctaLink: "/services/branding",
-  },
-  {
-    id: 6,
-    imageSrc: "/hero/slide6.jpg",
-    alt: "Books being distributed on a global scale.",
-    ctaText: "More on Publishing",
-    ctaLink: "/services/publishing",
-  },
-];
 
 export const Hero = () => {
-  const [api, setApi] = useState<CarouselApi>();
-  const [current, setCurrent] = useState(0);
-
-  const autoplayPlugin = useRef(
-    Autoplay({ delay: 3000 })
-  );
-
-  useEffect(() => {
-    if (!api) return;
-    
-    setCurrent(api.selectedScrollSnap());
-    const onSelect = () => {
-      setCurrent(api.selectedScrollSnap());
-    };
-    api.on("select", onSelect);
-    
-    return () => {
-      api.off("select", onSelect);
-    };
-  }, [api]);
+  const handleDiscoverClick = () => {
+    const aboutSection = document.querySelector("#about-the-book");
+    if (aboutSection) {
+      aboutSection.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
+  };
 
   return (
-    <div className=" pb-8">
-    <section className="relative bg-[#929884] w-full mx-auto">
-      <Carousel
-        setApi={setApi}
-        plugins={[autoplayPlugin.current]}
-        opts={{ loop: true }}
-        className="w-full"
-      >
-        <CarouselContent>
-          {carouselSlides.map((slide) => (
-            <CarouselItem key={slide.id}>
-              <div className="relative h-[22rem] md:h-[28rem] w-full">
-                <Image
-                  src="/hero2.webp"
-                  width="600"
-                  height="600"
-                  alt={slide.alt}
-                  className="absolute h-[130px] w-[350px] md:w-[600px] md:h-[220px] top-[40%] -translate-y-1/2 left-1/2 -translate-x-1/2"
-                  priority={slide.id === 1}
-                />                
-                {/* --- Unique CTA Button per Slide --- */}
-                <a
-                  href={slide.ctaLink}
-                  className="absolute bottom-12 md:bottom-[10%] left-1/2 -translate-x-1/2 z-10 block text-center bg-black text-white uppercase font-semibold 
-                             py-3 px-8 hover:bg-rose-700 transition-colors duration-300 cursor-pointer w-auto whitespace-nowrap text-sm" 
-                >
-                  {slide.ctaText}
-                </a>
-              </div>
-            </CarouselItem>
-          ))}
-        </CarouselContent>
-      </Carousel>
-
-      {/* --- Custom Dot Indicators (Below the Carousel) --- */}
-    </section>
-      <div className="flex justify-center gap-2 mt-6">
-        {carouselSlides.map((_, index) => (
-          <button
-            key={index}
-            onClick={() => api?.scrollTo(index)}
-            className={`w-2 h-2 rounded-full transition-all duration-300 ${
-              index === current ? "bg-rose-600 w-6" : "bg-gray-300 hover:bg-gray-400"
-            }`}
-            aria-label={`Go to slide ${index + 1}`}
+    <section className="relative max-w-7xl mx-auto">
+      {/* Background overlay */}
+      
+      <div className="relative z-10 max-w-7xl text-white flex flex-col lg:flex-row md:gap-8 items-center lg:items-start">
+        <div className="w-fit z-20 text-center lg:text-center my-auto">
+          <h1 className="text-5xl sm:text-5xl md:text-6xl lg:text-8xl leading-tight font-poppins font-semibold">
+            LOST SECRET
+          </h1>
+          <h1 className="text-xl mt-2 sm:text-2xl md:text-3xl lg:text-4xl leading-tight font-poppins font-semibold tracking-wide uppercase">
+           The <span className="text-[#fec539]"> Hidden</span> Truth Of Nalanda
+          </h1>
+          <h1 className="text-2xl mt-6 sm:mt-8 lg:mt-10 sm:text-3xl md:text-4xl lg:text-5xl leading-tight font-poppins font-semibold tracking-wide uppercase">
+           Akash Pasricha
+          </h1>
+          <p className="mt-4 sm:mt-6 text-base sm:text-lg max-w-2xl mx-auto lg:mx-0">
+            A razor-sharp thriller that fuses ancient history with high-stakes espionage, Lost Secret: The Hidden Truth of Nalanda will leave you breathless.
+          </p>
+          <div className="mt-6 sm:mt-8 lg:mt-10 flex flex-col sm:flex-row gap-4 justify-center">
+            <button 
+              onClick={handleDiscoverClick}
+              className="hidden sm:block px-4 py-2 bg-[#fec539] text-black font-semibold uppercase hover:bg-yellow-600 transition-all duration-300 cursor-pointer"
+            >
+              Discover The Story
+            </button>
+          </div>
+        </div>
+        
+        <div className="relative z-10 flex-shrink-0">
+          <Image
+            src="/book1.png"
+            alt="Lost Secret Book"
+            width={600}
+            height={800}
+            className="w-full h-full object-cover"
+            priority
           />
-        ))}
+        </div>
       </div>
-      </div>
+    </section>
   );
 };

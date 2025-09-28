@@ -2,65 +2,51 @@
 "use client";
 
 import { Founder } from "./components/Founder";
-import FAQ from "./components/FAQ";
 import { Footer } from "./components/Footer";
 import { Header } from "./components/Header";
 import { Hero } from "./components/Hero";
-import { UpcomingEvents } from "./components/UpcomingEvents";
-import { useUIStore } from "@/store/useUIStore";
-import { Bestsellers } from "./components/Bestseller";
-import { OurAuthors } from "./components/OurAuthors";
+import { AboutTheBook } from "./components/AboutTheBook";
+import { Testimonials } from "./components/Testimonials";
+import { MediaInquiries } from "./components/MediaInquiries";
 
 export default function Home() {
-  const { mobileMenuOpen } = useUIStore();
-
   return (
-    <div
-      className={`bg-white relative text-gray-800 font-sans ${
-        mobileMenuOpen ? "h-screen overflow-hidden" : ""
-      }`}
-    >
-      <p className="text-center bg-[#bb0000] text-white text-sm p-1.5 hover:underline cursor-pointer">
-        Sign up for Bookperk—fantastic deals, sweepstakes, bookish finds & more!
-      </p>
-      <Header />
+    <div className="relative text-gray-800 font-sans">
+      {/* Background container with herobg.jpg */}
+      <div 
+        className="relative bg-cover bg-center bg-no-repeat"
+        style={{ backgroundImage: "url('/herobg.jpg')" }}
+      >
+        {/* Background overlay for better content readability */}
+        <div className="absolute inset-0 bg-black/50" />
+        
+        {/* Header and Hero content positioned above background */}
+        <div className="relative z-10 h-full flex flex-col">
+          <Header />
+          <div className="flex-1 flex p-4 items-center pt-10 justify-center">
+            <Hero />
+          </div>
+        </div>
+      </div>
+      
       <main className="mx-auto">
         <div className="relative isolate overflow-hidden">
-          <Hero />
+          {/* Additional content can go here */}
         </div>
-        <div className="px-4">
-          <Bestsellers/>
+         <div className="px-4 relative overflow-hidden">
+          <AboutTheBook/>
         </div>
-        <div className="px-4 relative isolate overflow-hidden">
-          <div
-            aria-hidden="true"
-            className=" absolute top-0 left-0 -translate-y-1/2 w-96 h-96 md:w-[45rem] md:h-[45rem] bg-rose-100 rounded-full opacity-90 blur-3xl -z-10 -translate-x-1/2"
-          />
+        
+        <div className=" relative isolate overflow-hidden bg-gray-50">
           <Founder />
         </div>
-        <div className="px-4 bg-rose-600">
-          <OurAuthors/>
+        
+        <div className="px-4 relative overflow-hidden">
+          <Testimonials/>
         </div>
-
-        <div className="relative px-4 isolate overflow-hidden">
-          {/* Decorative Blob: Positioned before the content, no negative z-index */}
-          <div
-            aria-hidden="true"
-            className="absolute top-0 right-0 -translate-y-1/2 w-96 h-96 md:w-[45rem] md:h-[45rem] bg-rose-100 rounded-full opacity-90 blur-3xl -z-20 translate-x-1/2"
-          />
-
-          <UpcomingEvents />
-        </div>
-
-        {/* --- FAQ with Visible Background --- */}
-        <div className="relative px-4 isolate overflow-hidden">
-          {/* Decorative Blob */}
-          <div
-            aria-hidden="true"
-            className="absolute top-0 left-0 -translate-y-1/2 w-96 h-96 md:w-[45rem] md:h-[45rem] bg-rose-100 rounded-full opacity-90 blur-3xl -z-10 -translate-x-1/2"
-          />
-
-          <FAQ />
+        
+        <div className="px-4 bg-gray-50">
+          <MediaInquiries/>
         </div>
       </main>
       <Footer />

@@ -13,8 +13,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Hubhawks",
-  description: "Hub of Creativity.",
+  title: "Akash Pasricha",
+  description: "Author of Lost Secret.",
 };
 
 export default function RootLayout({

@@ -18,25 +18,17 @@ export const Header = () => {
 
   return (
     <header className="font-poppins text-white">
-      <div className="max-w-7xl mx-auto flex justify-between items-center px-4 py-6">
-        {/* --- Logo --- */}
-        <button
-          onClick={() => handleNavClick("#")}
-          className="flex-shrink-0 mt-2 flex items-center text-2xl md:text-3xl font-poppins font-semibold hover:text-[#fec539] transition-colors"
-        >
-          Akash Pasricha
-        </button>
+      <div className="max-w-7xl mx-auto flex justify-end items-center px-4 py-6">
 
-        {/* --- Navigation (visible on all screen sizes) --- */}
         <nav className="hidden md:flex items-center gap-4 md:gap-8 text-xs md:text-sm font-medium uppercase">
           {navLinks.map((link) => (
             <button
               key={link.href}
               onClick={() => handleNavClick(link.href)}
-              className="relative group transition-colors hover:text-[#fec539]"
+              className="relative group transition-colors"
             >
               {link.label}
-              <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-[#fec539] transition-all duration-300 group-hover:w-full"></span>
+              <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-[#e9343b] transition-all duration-300 group-hover:w-full"></span>
             </button>
           ))}
         </nav>

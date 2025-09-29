@@ -85,11 +85,11 @@ export const Testimonials = () => {
   };
 
   return (
-    <section id="testimonials" className="py-20 overflow-hidden">
+    <section id="testimonials" className="py-16 overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 md:px-6">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-poppins font-semibold text-gray-900 mb-4">
-            Reader <span className="text-[#FFCF30]">Reviews</span>
+            Reader <span className="text-[#e9343b]">Reviews</span>
           </h2>
         </div>
 
@@ -116,8 +116,8 @@ export const Testimonials = () => {
                     <div className="relative bg-white shadow-xl transition-all duration-300 border border-gray-200 min-h-[320px] flex flex-col">
                       {/* Quote Icon - Fixed positioning */}
                       <div className="absolute -top-6 left-8 z-10">
-                        <div className="bg-[#FFCF30] p-4 shadow-lg">
-                          <Quote className="w-6 h-6 text-gray-800" />
+                        <div className="bg-gray-800 p-4 shadow-lg">
+                          <Quote className="w-6 h-6 text-white" />
                         </div>
                       </div>
                       
@@ -140,7 +140,7 @@ export const Testimonials = () => {
                           <h4 className="font-semibold text-gray-900 text-lg mb-1">
                             {testimonial.authorName}
                           </h4>
-                          <p className="text-[#FFCF30] font-semibold text-sm uppercase tracking-wide">
+                          <p className="text-gray-400 font-semibold text-sm uppercase tracking-wide">
                             Verified Reader
                           </p>
                         </div>
@@ -153,8 +153,8 @@ export const Testimonials = () => {
           </CarouselContent>
 
           {/* Navigation Buttons */}
-          <CarouselPrevious className="absolute -left-2 top-1/2 -translate-y-1/2 bg-white shadow-lg border-2 border-gray-200 hover:border-[#FFCF30] hover:bg-[#FFCF30] transition-all duration-300 z-20" />
-          <CarouselNext className="absolute -right-2 top-1/2 -translate-y-1/2 bg-white shadow-lg border-2 border-gray-200 hover:border-[#FFCF30] hover:bg-[#FFCF30] transition-all duration-300 z-20" />
+          <CarouselPrevious className="absolute -left-2 top-1/2 -translate-y-1/2 bg-white shadow-lg border-2 border-gray-200 hover:border-gray-200 hover:bg-gray-200 transition-all duration-300 z-20" />
+          <CarouselNext className="absolute -right-2 top-1/2 -translate-y-1/2 bg-white shadow-lg border-2 border-gray-200 hover:border-gray-200 hover:bg-gray-200 transition-all duration-300 z-20" />
         </Carousel>
 
         {/* Carousel Indicators */}
@@ -165,7 +165,7 @@ export const Testimonials = () => {
               onClick={() => api?.scrollTo(index)}
               className={`w-3 h-3 rounded-full transition-all duration-300 ${
                 index === current 
-                  ? "bg-[#FFCF30] scale-125" 
+                  ? "bg-gray-500 scale-125" 
                   : "bg-gray-300 hover:bg-gray-400"
               }`}
             />

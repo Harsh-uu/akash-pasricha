@@ -11,12 +11,12 @@ export const Founder = () => {
         {/* --- Heading (Outside the Container) --- */}
         <div className="text-center mb-12 md:mb-16">
           <h2 className="text-4xl md:text-5xl font-poppins font-semibold text-gray-800">
-            Meet The <span className="text-[#fec539]">Author</span>
+            Meet The <span className="text-[#e9343b]">Author</span>
           </h2>
         </div>
 
         {/* --- Main Content Container with Background --- */}
-        <div className="bg-white/90 shadow-xl overflow-hidden flex flex-col lg:flex-row max-w-6xl mx-auto">
+        <div className="bg-[white/90] shadow-xl overflow-hidden flex flex-col lg:flex-row max-w-6xl mx-auto">
           {/* --- Image Column (First) --- */}
           <div className="lg:w-1/2 w-full">
             <div className="relative w-full h-72 md:h-96 lg:h-full">

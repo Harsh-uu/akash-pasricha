@@ -29,7 +29,6 @@ const bookData = {
   },
   buyLinks: [
     { name: "Amazon", url: "#", id: 0 },
-    { name: "Amazon", url: "#", id: 1 },
   ],
 };
 
@@ -46,7 +45,7 @@ export const AboutTheBook = () => {
         {/* Section Heading */}
         <div className="text-center mb-12">
           <h2 className="text-4xl md:text-5xl font-poppins font-semibold text-gray-900">
-            Uncover The <span className="text-[#fec539]">Truth</span>
+            Uncover The <span className="text-[#e9343b]">Truth</span>
           </h2>
         </div>
 
@@ -82,9 +81,9 @@ export const AboutTheBook = () => {
             <div className="border border-gray-200 overflow-hidden">
               <button
                 onClick={() => setKeyFeaturesOpen(!keyFeaturesOpen)}
-                className="w-full px-6 py-4 bg-gray-50 hover:bg-gray-100 transition-colors flex items-center justify-between text-left"
+                className="w-full px-6 py-4 bg-gray-100 hover:bg-gray-200 transition-colors flex items-center justify-between text-left"
               >
-                <h4 className="text-xl font-bold text-gray-800">Key Features</h4>
+                <h4 className="text-xl font-semibold text-gray-800">Key Features</h4>
                 {keyFeaturesOpen ? (
                   <ChevronUp className="w-5 h-5 text-gray-600" />
                 ) : (
@@ -95,7 +94,7 @@ export const AboutTheBook = () => {
                 <div className="px-6 py-4 space-y-3 bg-white">
                   {bookData.highlights.map((highlight, index) => (
                     <div key={index} className="flex items-start gap-3 text-left">
-                      <Check className="w-5 h-5 text-[#fec539] mt-1 flex-shrink-0" />
+                      <Check className="w-5 h-5 text-[#e9343b] mt-1 flex-shrink-0" />
                       <span className="text-gray-700">{highlight}</span>
                     </div>
                   ))}
@@ -107,9 +106,9 @@ export const AboutTheBook = () => {
             <div className="border border-gray-200 overflow-hidden">
               <button
                 onClick={() => setBookDetailsOpen(!bookDetailsOpen)}
-                className="w-full px-6 py-4 bg-gray-50 hover:bg-gray-100 transition-colors flex items-center justify-between text-left"
+                className="w-full px-6 py-4 bg-gray-100 hover:bg-gray-200 transition-colors flex items-center justify-between text-left"
               >
-                <h4 className="text-xl font-bold text-gray-800">Book Details</h4>
+                <h4 className="text-xl font-semibold text-gray-800">Book Details</h4>
                 {bookDetailsOpen ? (
                   <ChevronUp className="w-5 h-5 text-gray-600" />
                 ) : (
@@ -168,9 +167,9 @@ export const AboutTheBook = () => {
             <div className="border border-gray-200 overflow-hidden">
               <button
                 onClick={() => setTrailerOpen(!trailerOpen)}
-                className="w-full px-6 py-4 bg-gray-50 hover:bg-gray-100 transition-colors flex items-center justify-between text-left"
+                className="w-full px-6 py-4 bg-gray-100 hover:bg-gray-200 transition-colors flex items-center justify-between text-left"
               >
-                <h4 className="text-xl font-bold text-gray-800">Book Trailer</h4>
+                <h4 className="text-xl font-semibold text-gray-800">Book Trailer</h4>
                 {trailerOpen ? (
                   <ChevronUp className="w-5 h-5 text-gray-600" />
                 ) : (
@@ -191,7 +190,7 @@ export const AboutTheBook = () => {
 
             {/* Buy Links */}
             <div>
-              <h4 className="text-2xl font-bold text-gray-800 mb-4 ">
+              <h4 className="text-2xl font-semibold text-gray-800 mb-4 ">
                 Get Your Copy
               </h4>
               <div className="flex justify-center md:justify-start">

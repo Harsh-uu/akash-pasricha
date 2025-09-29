@@ -32,7 +32,7 @@ export const Hero = () => {
           <div className="mt-6 sm:mt-8 lg:mt-10 flex flex-col sm:flex-row gap-4 justify-center">
             <button 
               onClick={handleDiscoverClick}
-              className="hidden sm:block px-4 py-2 bg-[#fec539] text-black font-semibold uppercase hover:bg-yellow-600 transition-all duration-300 cursor-pointer"
+              className="hidden sm:block px-4 py-2 bg-[#e9343b] text-white font-medium uppercase hover:bg-red-700 transition-all duration-300 cursor-pointer"
             >
               Discover The Story
             </button>

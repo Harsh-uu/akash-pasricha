@@ -11,7 +11,7 @@ export const MediaInquiries = () => {
         {/* Section Heading */}
         <div className="mb-12">
           <h2 className="text-4xl md:text-5xl font-poppins font-semibold text-gray-900">
-            Media & <span className="text-[#fec539]">Inquiries</span>
+            Media & <span className="text-[#e9343b]">Inquiries</span>
           </h2>
         </div>
 
@@ -27,10 +27,10 @@ export const MediaInquiries = () => {
           <div className="space-y-6">
             {/* Email */}
             <div className="flex items-center justify-center gap-3 text-gray-800">
-              <Mail className="w-6 h-6 text-[#fec539]" />
+              <Mail className="w-6 h-6 text-gray-800" />
               <a 
                 href="mailto:info@nuvoicepress.com" 
-                className="text-lg font-medium hover:text-[#fec539] transition-colors"
+                className="text-lg font-medium hover:text-[#e9343b] transition-colors"
               >
                 info@nuvoicepress.com
               </a>
@@ -42,7 +42,7 @@ export const MediaInquiries = () => {
                 href="https://nuvoice-revamp.vercel.app/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-3 bg-[#fec539] text-black font-semibold py-4 px-8 hover:bg-yellow-400 transition-colors"
+                className="inline-flex items-center gap-3 bg-[#e9343b] text-white font-semibold py-4 px-8 hover:bg-red-700 transition-colors"
               >
                 <span>Visit Publisher</span>
                 <ExternalLink className="w-5 h-5" />

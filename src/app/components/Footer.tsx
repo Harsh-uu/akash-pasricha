@@ -12,7 +12,7 @@ export const Footer = () => {
           <div className="text-center">
             <a 
               href="/" 
-              className="text-2xl md:text-3xl font-poppins font-semibold hover:text-[#fec539] transition-colors"
+              className="text-2xl md:text-3xl font-poppins font-semibold hover:text-[#e9343b] transition-colors"
             >
               Akash Pasricha
             </a>
@@ -28,7 +28,7 @@ export const Footer = () => {
                 href="https://twitter.com/akashpasricha" 
                 target="_blank" 
                 rel="noopener noreferrer"
-                className=" text-black p-3 rounded-full hover:bg-yellow-500 bg-[#fec539] transition-colors"
+                className=" text-white p-3 rounded-full hover:bg-red-700 bg-[#e9343b] transition-colors"
               >
                 <Twitter className="w-4 h-4" />
               </a>
@@ -36,7 +36,7 @@ export const Footer = () => {
                 href="https://instagram.com/akashpasricha" 
                 target="_blank" 
                 rel="noopener noreferrer"
-                className=" text-black p-3 rounded-full hover:bg-yellow-500 bg-[#fec539] transition-colors"
+                className=" text-white p-3 rounded-full hover:bg-red-700 bg-[#e9343b] transition-colors"
               >
                 <Instagram className="w-4 h-4" />
               </a>
@@ -44,13 +44,13 @@ export const Footer = () => {
                 href="https://linkedin.com/in/akashpasricha" 
                 target="_blank" 
                 rel="noopener noreferrer"
-                className=" text-black p-3 rounded-full hover:bg-yellow-500 bg-[#fec539] transition-colors"
+                className=" text-white p-3 rounded-full hover:bg-red-700 bg-[#e9343b] transition-colors"
               >
                 <Linkedin className="w-4 h-4" />
               </a>
               <a 
                 href="mailto:contact@akashpasricha.com" 
-                className=" text-black p-3 rounded-full hover:bg-yellow-500 bg-[#fec539] transition-colors"
+                className=" text-white p-3 rounded-full hover:bg-red-700 bg-[#e9343b] transition-colors"
               >
                 <Mail className="w-4 h-4" />
               </a>

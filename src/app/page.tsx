@@ -6,6 +6,7 @@ import { Footer } from "./components/Footer";
 import { Header } from "./components/Header";
 import { Hero } from "./components/Hero";
 import { AboutTheBook } from "./components/AboutTheBook";
+import { BookTrailer } from "./components/BookTrailer";
 import { Testimonials } from "./components/Testimonials";
 import { BookQuiz } from "./components/BookQuiz";
 import { MediaInquiries } from "./components/MediaInquiries";
@@ -15,16 +16,16 @@ export default function Home() {
     <div className="relative text-gray-800 font-sans">
       {/* Background container with herobg.jpg */}
       <div 
-        className="relative h-[47rem] bg-cover bg-center bg-no-repeat"
+        className="relative bg-cover bg-center bg-no-repeat"
         style={{ backgroundImage: "url('/herobg.jpg')" }}
       >
         {/* Background overlay for better content readability */}
         <div className="absolute inset-0 bg-black/50" />
         
         {/* Header and Hero content positioned above background */}
-        <div className="relative z-10 h-full flex flex-col">
+        <div className="relative z-10 h-full flex flex-col overflow-hidden">
           <Header />
-          <div className="flex-1 flex p-4 items-center -mt-20 md:-mt-10 justify-center">
+          <div className="flex-1 flex items-center md:mt-10 justify-center">
             <Hero />
           </div>
         </div>
@@ -34,11 +35,14 @@ export default function Home() {
         <div className="relative isolate overflow-hidden">
           {/* Additional content can go here */}
         </div>
-         <div className="px-4 relative overflow-hidden bg-gray-50">
+         <div className="px-4 relative overflow-hidden">
           <AboutTheBook/>
         </div>
         
-        <div className=" relative isolate overflow-hidden ">
+        {/* Book Trailer Section */}
+        <BookTrailer />
+        
+        <div className="px-4 relative isolate overflow-hidden ">
           <Founder />
         </div>
         

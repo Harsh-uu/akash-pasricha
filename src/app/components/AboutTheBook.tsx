@@ -1,7 +1,7 @@
 // src/components/AboutTheBook.tsx
 "use client";
 
-import { Check, ChevronDown, ChevronUp, Play } from "lucide-react";
+import { Check, ChevronDown, ChevronUp } from "lucide-react";
 import Image from "next/image";
 import React, { useState } from "react";
 
@@ -36,7 +36,6 @@ const bookData = {
 export const AboutTheBook = () => {
   const [keyFeaturesOpen, setKeyFeaturesOpen] = useState(false);
   const [bookDetailsOpen, setBookDetailsOpen] = useState(false);
-  const [trailerOpen, setTrailerOpen] = useState(false);
 
   return (
     <section id="about-the-book" className="py-16 text-gray-900">
@@ -78,7 +77,7 @@ export const AboutTheBook = () => {
             </div>
 
             {/* Key Features Dropdown */}
-            <div className="border border-gray-200 overflow-hidden">
+            <div className="border border-gray-100 overflow-hidden">
               <button
                 onClick={() => setKeyFeaturesOpen(!keyFeaturesOpen)}
                 className="w-full px-6 py-4 bg-gray-100 hover:bg-gray-200 transition-colors flex items-center justify-between text-left"
@@ -103,7 +102,7 @@ export const AboutTheBook = () => {
             </div>
 
             {/* Book Details Dropdown */}
-            <div className="border border-gray-200 overflow-hidden">
+            <div className="border border-gray-100 overflow-hidden">
               <button
                 onClick={() => setBookDetailsOpen(!bookDetailsOpen)}
                 className="w-full px-6 py-4 bg-gray-100 hover:bg-gray-200 transition-colors flex items-center justify-between text-left"
@@ -163,37 +162,12 @@ export const AboutTheBook = () => {
               )}
             </div>
 
-            {/* Trailer Dropdown */}
-            <div className="border border-gray-200 overflow-hidden">
-              <button
-                onClick={() => setTrailerOpen(!trailerOpen)}
-                className="w-full px-6 py-4 bg-gray-100 hover:bg-gray-200 transition-colors flex items-center justify-between text-left"
-              >
-                <h4 className="text-xl font-semibold text-gray-800">Book Trailer</h4>
-                {trailerOpen ? (
-                  <ChevronUp className="w-5 h-5 text-gray-600" />
-                ) : (
-                  <ChevronDown className="w-5 h-5 text-gray-600" />
-                )}
-              </button>
-              {trailerOpen && (
-                <div className="px-6 py-4 bg-white">
-                  <div className="aspect-video bg-gray-100 flex items-center justify-center">
-                    <div className="text-center">
-                      <Play className="w-16 h-16 text-gray-400 mx-auto mb-4" />
-                      <p className="text-gray-600">Book trailer coming soon...</p>
-                    </div>
-                  </div>
-                </div>
-              )}
-            </div>
-
             {/* Buy Links */}
             <div>
-              <h4 className="text-2xl font-semibold text-gray-800 mb-4 ">
+              <h4 className="text-2xl text-center font-semibold text-gray-800 mb-4 ">
                 Get Your Copy
               </h4>
-              <div className="flex justify-center md:justify-start">
+              <div className="flex justify-center">
                 {bookData.buyLinks.map((link) => (
                   <a
                     key={link.id}

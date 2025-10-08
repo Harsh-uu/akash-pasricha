@@ -45,6 +45,10 @@ module.exports = {
   				'var(--font-epilogue)',
   				'serif'
   			],
+  			allerta: [
+  				'var(--font-allerta)',
+  				'serif'
+  			],
   		},
   		colors: {
   			rose: {
@@ -99,6 +103,9 @@ module.exports = {
   				'4': 'hsl(var(--chart-4))',
   				'5': 'hsl(var(--chart-5))'
   			}
+  		},
+  		backgroundImage: {
+  			'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
   		},
   		borderRadius: {
   			lg: 'var(--radius)',

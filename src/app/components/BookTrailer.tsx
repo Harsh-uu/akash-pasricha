@@ -6,7 +6,7 @@ import React from "react";
 export const BookTrailer = () => {
 
   return (
-    <section className="py-20 bg-gray-50">
+    <section className="py-16 bg-gray-50">
       <div className="max-w-4xl mx-auto px-6">
         <div className="text-center mb-12">
           <h2 className="text-4xl md:text-5xl font-poppins font-semibold text-gray-900 mb-4">

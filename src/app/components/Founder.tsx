@@ -36,14 +36,7 @@ export const Founder = () => {
             <h1 className="text-3xl font-semibold">Akash Pasricha</h1>
            
             <p className="text-gray-600 lg:text-lg leading-relaxed mt-4">
-              Akash Pasricha is an avid traveller and has lived in India, the
-              USA and Latin America. He enjoys living like the locals, learning
-              their customs and language when possible. His interests include
-              skiing, drumming, hiking, and cooking. This is his first book to expand the knowledge and provide
-              inspiration through Indian history, in hopes of unlocking the
-              hidden potential of a people. He lives in New Delhi and
-              California, splitting his time between his family and his passion
-              for Indian history.
+              Akash Pasricha is a curious traveller with a passion for immersing himself in local cultures—learning their languages, customs, and stories. His interests range from skiing and hiking to drumming and cooking (though not usually all at once). This debut book is a tribute to Indian history, written to uncover forgotten narratives and spark fresh inspiration. He splits his time between New Delhi and California, juggling family life and historical rabbit holes—with varying degrees of success.
             </p>
           </div>
         </div>

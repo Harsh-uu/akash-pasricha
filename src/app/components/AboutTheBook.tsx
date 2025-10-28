@@ -28,7 +28,7 @@ const bookData = {
     publisher: "Nu Voice Press"
   },
   buyLinks: [
-    { name: "Amazon", url: "#", id: 0 },
+    { name: "Amazon", url: "#", id: 0, image: "/amazon.png" },
   ],
 };
 
@@ -167,24 +167,22 @@ export const AboutTheBook = () => {
               <h4 className="text-2xl text-center font-semibold text-gray-800 mb-4 ">
                 Get Your Copy
               </h4>
-              <div className="flex justify-center">
-                {bookData.buyLinks.map((link) => (
-                  <a
-                    key={link.id}
-                    href={link.url}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="w-28 h-16 overflow-hidden px-4 flex items-center justify-center"
-                  >
-                    <Image
-                      src="/amazon.png"
-                      alt="Amazon"
-                      width={100}
-                      height={100}
-                      className="object-cover object-center"
-                    />
-                  </a>
-                ))}
+              <div className="flex flex-wrap justify-center items-center">
+                <a
+                  href={bookData.buyLinks[0].url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-28 h-16 overflow-hidden px-4 flex items-center justify-center transition-colors"
+                >
+                  <Image
+                    src="/amazon.png"
+                    alt="Amazon"
+                    width={100}
+                    height={100}
+                    className="object-cover object-center"
+                  />
+                </a>
+                <span className="text-lg text-gray-700 -mt-2.5 -ml-2.5">or your nearest bookstore</span>
               </div>
             </div>
           </div>
